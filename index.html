@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas id = "canvas" width="600" height="600">Your browser doesn't support the canvas element.</canvas>
+    </body>
+    <script type="text/javascript">
+        var colorPixel = function( point ) {
+            c.fillStyle = "rgba(10, 200, 10, 255)";
+            c.fillRect( point[0], point[1], 1, 1 );
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+
+        c.fillStyle = "black";
+        c.fillRect( 0 , 0, 750, 750);
+
+
+        var points = [[300, 100], [100, 500], [500, 500]]; // experiment with these
+        var d = [300, 300]; // and this one too
+
+        var draw = function() {
+            colorPixel(d);
+            var index = getRandom(0, 3);
+            d[0] = (points[index][0] + d[0])/2
+            d[1] = (points[index][1] + d[1])/2
+        }
+        
+        // draw as many points as you can! the more the points, the more the thickness, generally.
+        for ( var i = 0; i < 50000; i++) {
+            draw();
+        }
+
+    </script>
+</html>

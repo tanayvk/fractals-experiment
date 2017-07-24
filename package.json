@@ -1,0 +1,11 @@
+{
+  "name": "fractals-experiment",
+  "author": "Tanay Karnik",
+  "description": "A simple script which draws a triangular pattern on the canvas. Based on simple euclidean geometry.",
+  "scripts": {
+    "start": "concurrently \"lite-server\""
+  },
+  "dependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
